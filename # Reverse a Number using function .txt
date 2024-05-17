@@ -1,0 +1,28 @@
+# Reverse a Number using function 
+ 
+# Function to reverse the number 
+reverse_number() { 
+    local num=$1 
+    local rev=0 
+ 
+    while [ $num -gt 0 ]; do 
+        local digit=$(( num % 10 )) 
+        rev=$(( rev * 10 + digit )) 
+        num=$(( num / 10 )) 
+    done 
+ 
+    echo $rev 
+} 
+ 
+# Main script execution starts here 
+read -p "Enter a number: " number 
+ 
+# Check if the input is a valid number 
+if ! [[ "$number" =~ ^[0-9]+$ ]]; then 
+    echo "Error: Please enter a valid number." 
+    exit 1 
+fi 
+ 
+# Call the function and display the reversed number 
+reversed_number=$(reverse_number $number) 
+echo "Reversed number: $reversed_number"

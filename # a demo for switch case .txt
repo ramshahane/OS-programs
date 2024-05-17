@@ -1,0 +1,40 @@
+# a demo for switch case 
+ 
+echo -n -e "Enter:\n1. Prime number\n2. Even Number\nYour Choice: " 
+read x  
+case $x in 
+1) echo "Enter a number: " 
+read number 
+is_prime=true 
+i=2 
+if [ $number -lt 2 ]; then 
+    is_prime=false 
+fi 
+ 
+while [ $i -lt $number ]; do 
+    if [ $((number % i)) -eq 0 ]; then 
+        is_prime=false 
+        break 
+    fi 
+    ((i++)) 
+done 
+ 
+if [ $is_prime = true ]; then 
+    echo "It is a prime number" 
+else 
+    echo "It is not a prime number" 
+fi 
+;; 
+2) number=0 
+count=0 
+ 
+while [ $count -lt 5 ]; do      # use -ne for not equal to for odd numbers 
+    if [ $((number % 2)) -eq 0 ]; then 
+        echo $number 
+        ((count++)) 
+    fi 
+    ((number++)) 
+done 
+;; 
+*) echo "Wrong Choice..." 
+esac

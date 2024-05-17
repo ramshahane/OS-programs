@@ -1,0 +1,8 @@
+echo "Enter you age: " 
+read age 
+no=18 
+if [ $age -ge $no ] 
+then 
+echo "You can vote!" 
+else 
+echo "You are small.
